@@ -16,6 +16,7 @@ sudo apt update
 sudo apt install ros-humble-gazebo-ros-pkgs
 sudo apt install portaudio19-dev
 pip install pyaudio
+pip install speechrecognition
 ```
 
 ## Cloning the Repository

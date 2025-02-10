@@ -66,7 +66,7 @@
     <xacro:property name="wheel_base" value="${props['wheel_base']}" />
     <xacro:property name="base_link_length" value="${props['base_link_length']}" />
     <xacro:property name="lidar_thickness" value="${props['lidar_thickness']}" />
-    <xacro:property name="base_link_height" value="${props['base_link_height']}" /> <!-- base_lidar_relative_height-lidar_thickness=0.12270-0.0194=0.1033 -->
+    <xacro:property name="base_link_height" value="${props['base_link_height']}" />
     <xacro:property name="lidar_radius" value="${props['lidar_radius']}" />
     <xacro:property name="base_lidar_distance_x" value="${props['base_lidar_distance_x']}" />
     <xacro:property name="base_caster_distance" value="${props['base_caster_distance']}" />

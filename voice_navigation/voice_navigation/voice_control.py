@@ -7,7 +7,7 @@ import time
 
 class SpeechToTextNode(Node):
     def __init__(self):
-        super().__init__('speech_to_text_node')
+        super().__init__('voice_control')
 
         # Publisher to publish transcribed text
         self.vel_publisher = self.create_publisher(Twist, 'cmd_vel', 10)
@@ -17,7 +17,7 @@ class SpeechToTextNode(Node):
         self.microphone = sr.Microphone()
 
         # Start listening
-        self.get_logger().info("Speech-to-Text node initialized. Listening for speech...")
+        self.get_logger().info("Listening for speech...")
         self.listen_for_speech()
 
     def listen_for_speech(self):
@@ -28,7 +28,6 @@ class SpeechToTextNode(Node):
             while rclpy.ok():
                 try:
                     audio = self.recognizer.listen(source)
-                    # self.get_logger().info("Processing audio...")
 
                     # Send to Google Speech API
                     text = self.recognizer.recognize_google(audio)
@@ -133,25 +132,4 @@ if __name__ == '__main__':
     main()
 
 
-# text = "Move forward and then Turn left, after that Turn right. Finally, Stop."
-# print(text.lower())
-
-# phrases = ["Move forward", "Turn left", "Turn right", "Stop", "Move backward"]
-
-# # Store (index, phrase) pairs
-# found_phrases = []
-
-# for phrase in phrases:
-#     start = 0
-#     while (pos := text.find(phrase, start)) != -1:  # Find all occurrences
-#         found_phrases.append((pos, phrase))
-#         start = pos + 1  # Move start position forward to find the next occurrence
-
-# # Sort by index to maintain the order in text
-# found_phrases.sort()
-
-# # Extract only the phrases in order
-# ordered_phrases = [phrase for _, phrase in found_phrases]
-
-# print(ordered_phrases)
 
